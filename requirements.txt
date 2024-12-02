@@ -4,4 +4,4 @@ faiss-cpu
 sentence-transformers
 PyPDF2
 python-docx
-openai
+openai==0.28
