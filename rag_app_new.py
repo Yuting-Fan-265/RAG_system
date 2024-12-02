@@ -1,3 +1,25 @@
+import os
+import subprocess
+import sys
+
+# Install required packages if not already installed
+required_packages = [
+    "streamlit", 
+    "numpy", 
+    "faiss-cpu", 
+    "sentence-transformers", 
+    "PyPDF2", 
+    "python-docx", 
+    "openai"
+]
+
+for package in required_packages:
+    try:
+        __import__(package)
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+
 import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
